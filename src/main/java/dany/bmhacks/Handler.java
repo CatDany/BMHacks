@@ -21,6 +21,7 @@ public class Handler
 					|| name.equals("weakBloodOrb"))
 					|| name.equals("apprenticeBloodOrb")
 					|| name.equals("magicianBloodOrb")
+					|| name.equals("masterBloodOrb")
 					|| name.equals("archmageBloodOrb"))
 			{
 				if (e.entityPlayer.getHealth() <= 3.0F)
