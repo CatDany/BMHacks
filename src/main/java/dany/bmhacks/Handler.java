@@ -12,8 +12,6 @@ public class Handler
 	@SubscribeEvent
 	public void itemUse(PlayerInteractEvent e)
 	{
-		if (!e.world.isRemote)
-			return;
 		if (e.action == Action.RIGHT_CLICK_AIR || e.action == Action.RIGHT_CLICK_BLOCK && e.entityPlayer.inventory.getCurrentItem() != null)
 		{
 			String modid = GameRegistry.findUniqueIdentifierFor(e.entityPlayer.inventory.getCurrentItem().getItem()).modId;

@@ -39,6 +39,5 @@ public class BMHacks
 	public void init(FMLInitializationEvent e)
 	{
 		MinecraftForge.EVENT_BUS.register(Handler.instance);
-		System.out.println("GGGGGGGG");
 	}
 }
