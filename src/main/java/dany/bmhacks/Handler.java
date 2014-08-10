@@ -1,9 +1,11 @@
 package dany.bmhacks;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 
 public class Handler
 {
@@ -12,10 +14,16 @@ public class Handler
 	@SubscribeEvent
 	public void itemUse(PlayerInteractEvent e)
 	{
-		if (e.action == Action.RIGHT_CLICK_AIR || e.action == Action.RIGHT_CLICK_BLOCK && e.entityPlayer.inventory.getCurrentItem() != null)
+		if (e.action == Action.RIGHT_CLICK_AIR || e.action == Action.RIGHT_CLICK_BLOCK)
 		{
-			String modid = GameRegistry.findUniqueIdentifierFor(e.entityPlayer.inventory.getCurrentItem().getItem()).modId;
-			String name = GameRegistry.findUniqueIdentifierFor(e.entityPlayer.inventory.getCurrentItem().getItem()).name;
+			ItemStack heldItem = e.entityPlayer.inventory.getCurrentItem();
+			if (heldItem == null)
+			{
+				return;
+			}
+			UniqueIdentifier uid = GameRegistry.findUniqueIdentifierFor(heldItem.getItem());
+			String modid = uid.modId;
+			String name = uid.name;
 			if (modid.equals("AWWayofTime") && 
 					(  name.equals("sacrificialKnife")
 					|| name.equals("weakBloodOrb"))
@@ -24,7 +32,7 @@ public class Handler
 					|| name.equals("masterBloodOrb")
 					|| name.equals("archmageBloodOrb"))
 			{
-				if (e.entityPlayer.getHealth() <= 3.0F)
+				if (e.entityPlayer.getHealth() <= 2.0F)
 				{
 					e.setCanceled(true);
 				}

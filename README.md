@@ -7,6 +7,8 @@ Features:
 
 Downloads
 ========================
+[BMHacks b1.0-2 for 1.7.10 (Forge 10.13.0.1199+)](https://github.com/CatDany/BMHacks/raw/master/public_releases/BMHacks-1.7.10-b1.0-2-forge-1199.jar)
+
 [BMHacks b1.0-1 for 1.7.10 (Forge 10.13.0.1199+)](https://github.com/CatDany/BMHacks/raw/master/public_releases/BMHacks-1.7.10-b1.0-1-forge-1199.jar)
 
 Changelog
