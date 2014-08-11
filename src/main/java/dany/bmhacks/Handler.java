@@ -22,6 +22,10 @@ public class Handler
 				return;
 			}
 			UniqueIdentifier uid = GameRegistry.findUniqueIdentifierFor(heldItem.getItem());
+			if (uid == null)
+			{
+				return;
+			}
 			String modid = uid.modId;
 			String name = uid.name;
 			if (modid.equals("AWWayofTime") && 

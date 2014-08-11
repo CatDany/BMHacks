@@ -4,6 +4,9 @@
 3. Minor: important changes to a mod
 4. Build: Whenever the mod is built by ForgeGradle (IDE builds don't count). Also independent from the other ones
 
+b1.0-3 (2014/08/11 1:29 GMT+0)
+- Fixed random NullPointerException crashes (added isNull check for UniqueIdentifier)
+
 b1.0-2 (2014/08/10 14:32 GMT+0)
 - Health limit is now 2 HP (it means you'll get 11.11% more blood average)
 - Optimized code a little bit
